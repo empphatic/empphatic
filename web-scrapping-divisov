@@ -1,5 +1,5 @@
-import bs4
 from urllib.request import urlopen as uReq
+from bs4 import BeautifulSoup as soup
 
 my_url = 'https://souteze.fotbal.cz/turnaje/table/8b1b59e8-691f-43f9-88e7-d567f7ab74f5'
 # url stránky
@@ -10,8 +10,7 @@ uClient = uReq(myurl)
 page_html = uClient.read()
 Uclient.close()
 
-page_soup = soup (page_html, "html.parser")
+page_soup = soup(page_html, "html.parser")
 
 tabulka = page_soup.findAll("table", {"class":"table"})
-# did nothing
-
+# did not find anything
