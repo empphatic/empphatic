@@ -1,0 +1,17 @@
+import bs4
+from urllib.request import urlopen as uReq
+
+my_url = 'https://souteze.fotbal.cz/turnaje/table/8b1b59e8-691f-43f9-88e7-d567f7ab74f5'
+# url stránky
+
+uClient = uReq(myurl)
+# stáhne data ze stránky
+
+page_html = uClient.read()
+Uclient.close()
+
+page_soup = soup (page_html, "html.parser")
+
+tabulka = page_soup.findAll("table", {"class":"table"})
+# did nothing
+
